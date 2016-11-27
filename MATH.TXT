@@ -1,0 +1,38 @@
+rem this is math.txt
+
+sub int pow(dim base int, dim exp int)
+dim c int
+dim answ int
+answ = 1
+for c = 1 to exp step 1
+answ = base*answ
+print newline;"Current answ: ";answ
+next c
+return answ
+endsub
+
+sub int factorial(dim n int)
+dim x int
+dim y int
+dim z int
+dim a int
+if n >= 2 then
+x = n-1
+y = factorial(x)
+z = n*y
+return z
+else
+a = 1
+return a
+endif
+endsub
+
+sub int abs(dim a int)
+dim b int
+if a < 0 then
+b = 0-a
+else
+b = a
+endif
+return b
+endsub

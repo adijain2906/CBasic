@@ -1,0 +1,17 @@
+include "math.txt"
+
+sub void main()
+dim arr[5] int
+dim i int
+for i = 1 to 5 step 1
+input arr[i]
+next i
+
+print newline;"Here is the array: "
+
+for i = 1 to 5 step 1
+input arr[i]
+next i
+
+endsub
+ganesans@cadence.com

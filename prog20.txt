@@ -1,0 +1,95 @@
+sub int foo(dim a int)
+print a
+return a
+endsub
+
+sub void main()
+dim a int
+dim i int
+dim x int
+dim y int
+dim l int
+dim life int
+dim ly int
+dim xcompl int
+dim ycompu int
+dim xcompr int
+dim ycompd int
+life = 10
+ly = 30
+
+open canvas
+x = midx$
+y = midy$
+
+for i = 1 to 100 step 1
+delay 3
+clear canvas
+a = inarrow$
+
+if a = 72 then
+y = y-40
+else
+endif
+
+if a = 80 then
+y = y+40
+else
+endif
+
+if a = 77 then
+x = x+40
+else
+endif
+
+if a = 75 then
+x = x-40
+else
+endif
+
+color i
+circle(x,y,20)
+
+xcompl = x-20
+xcompr = x+20
+ycompu = y-20
+ycompd = y+20
+
+color 15
+pset(50,50)
+draw "d350r350u350l350"
+
+if xcompr > 400 || xcompl < 50 then
+x = 200
+y = 200
+life = life-1
+else
+endif 
+
+if ycompd > 400 || ycompu < 50 then
+life = life-1
+x = 200
+y = 200
+else
+endif
+
+for l = 1 to 10 step 1
+ly = ly+30
+pset(500,ly)
+if l =< life then
+color 2
+else
+end if
+
+if l > life then
+color 4
+else
+endif
+ 
+draw "r30d30l30u30d30"
+next l
+ly = 30
+a = 0
+next i
+close canvas
+endsub

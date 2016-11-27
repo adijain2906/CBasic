@@ -1,0 +1,31 @@
+sub int foo(dim a int)
+print a
+return a
+endsub
+
+sub void main()
+open canvas
+rem bkcolor 8
+dim x int
+dim wheel1_x int
+dim wheel2_x int
+dim car_x int
+dim mid_x int
+pset(20,200)
+for x = 100 to 200 step 1
+clear canvas
+color x
+car_x = x-80
+pset(car_x,200)
+draw "r35l35u30r50e30r40f30r50d30l35"
+mid_x = x-15
+pset(mid_x,200)
+draw "r70"
+wheel1_x = x-30
+wheel2_x = x+70
+circle(wheel1_x,200,15)
+circle(wheel2_x,200,15)
+delay 2
+next x
+close canvas
+endsub

@@ -1,0 +1,10 @@
+include "math.txt"
+
+sub void main()
+dim s int
+dim i int
+print "Enter the number to not find factorial of: "
+input i
+s = factorial(i)
+print i;"! = ";s;newline
+endsub

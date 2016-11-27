@@ -1,0 +1,26 @@
+sub int foo(dim a int)
+print a
+return a
+endsub
+
+sub void main()
+cls
+dim x int
+dim faltu int
+print "Enter x: ";faltu
+input x_p
+x = foo(x)
+x = foo2(x)
+dim y int
+if y > 9 then
+print "hey"
+else
+print "no hey"
+endif
+
+boom
+for y = t to 2 step 1
+print "hey"
+next y
+print "here is what I read: ";y
+endsub
