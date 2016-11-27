@@ -1,0 +1,274 @@
+A) Supported Datatypes:
++ int, int()
++ float, float()
++ string, string()
+
+A.1) Declration Syntax
++ For fundamental datatypes:
+dim var_name data_type
+example: dim abc int
++ For Single Dimensional Arrays:
+dim array_name(number_of_elemenets) data_type
+example: dim abc(5) string 
+
+B) Supported Commands:
++ input
++ print
++ if-then-else
++ for-next-step
++ cls
++ sleep
++ rem 
++ assignment (=)
++ return
++ include
++ sub
++ dim
++ canvas
++ color
++ bkcolor
++ circle
++ delay
++ draw
++ pset
++ inarrow$
++ midx$
++ midy$
+
+B.0) Input:
+description: can take int, float and strings from user
+syntax: input var_name
+
+B.1) Print:
+description: 
+- can print int, float, strings (both variable and constant)
+- can be chained using ";" charatecer
+- special characters allowed: newline and tab
+syntax: print var_name
+print newline;"A constant string: ";tab;var_name
+
+B.2) If-Then-Else
+description:
+- cannont be nested (yet)
+- offers the following logical operations: && and ||
+- offers the following comparision operations:
+<,>,>=,<=, <>, =
+- expressions are evaluated from left to right
+syntax: 
+if y > 9 then
+print "hey"
+elseif y < 3 && x > p 
+print "no hey"
+endif
+
+B.3) For-Next-Step
+description:
+- can be nested as many times as you want to
+- string variables can not work as "from", "to" or "step values
+syntax:
+for c = 1 to exp step 1
+answ = base*answ
+next c
+
+B.4) cls
+description:
+clears the screen
+syntax:
+cls
+
+B.5) sleep
+description:
+halts the excution of the program until user presses a key
+syntax:
+sleep
+
+B.6) rem
+description:
+marks the line as a comment
+syntax:
+rem this is a comment
+
+B.7) assignment (=)
+- can assign a constant, another variable and the return value
+of another function call to the left hand variable
+- can evaluate expressions on rihgt hand side
+syntax:  
+var_name1 = 1+(var_name2*4)^5
+var_name1 = 3
+var_name1 = foo(var_name2)
+
+B.8) Return
+- returns a variable to the calling sub
+- can return int and float but is a bit buggy with strings
+(sometimes)
+- can not perform mathmatical evaulations
+syntax:
+return var_name
+- subs with return type void can just use "return" not followed by
+anything
+
+B.9) Include
+- Lets you include functions defined in other CBasic files created by
+you or supplied by us
+- List of header files supplied by us:
+> math.txt:
+offers: factorial(dim x int), pow(dim base int, dim exp int),
+abs(dim a int)
+syntax: 
+include "math.txt"
+
+B.10) Subs
+- Functions are called subs in CBasic
+- start with keyword "sub" and ends with "endsub"
+- can have int, float and string as return types
+- can have argument list of any length and consisting of any type
+of actual arguments
+- subs can not return arrays (yet)
+- All CBasic programs requrired to have "sub void main()" as one
+of their members 
+- the argument is a comma sepreated list entered as mentioned:
+syntax:
+rem this is a recursive factorial from math.txt
+sub int factorial(dim n int)
+dim x int
+dim y int
+dim z int
+dim a int
+if n >= 2 then
+x = n-1
+y = factorial(x)
+z = n*y
+return z
+else
+a = 1
+return a
+endif
+endsub
+
+B.11) Dim
+- lets you declare variables of the datatypes mentioned earlier
+syntax: dim abc int
+
+B.12) Canvas
+description and syntax: 
+open canvas - stars the graphics mode
+clear canvas - clears the canvas
+close canvas - brings back text mode by closing graphics mode
+
+B.13) Color 
+description:
+- sets the current drawing color
+- an intiger between 1 and 15
+0 - BLACK      5 - MAGENTA        10 - LIGHTCYAN 
+1 - BLUE       6 - BROWN          11 - LIGHTRED
+2 - GREEN      7 - DARKGRAY	   12 - LIGHTMAGNETA	
+3 - CYAN       8 - LIGHTBLUE      13 - YELLOW
+4 - RED        9 - LIGHTGREEN     14 - WHITE
+syntax: color var_name
+
+B.14) Bkcolor 
+description:
+- sets the background color
+- an intiger between 1 and 15
+0 - BLACK      5 - MAGENTA        10 - LIGHTCYAN 
+1 - BLUE       6 - BROWN          11 - LIGHTRED
+2 - GREEN      7 - DARKGRAY	   12 - LIGHTMAGNETA	
+3 - CYAN       8 - LIGHTBLUE      13 - YELLOW
+4 - RED        9 - LIGHTGREEN     14 - WHITE
+syntax: bkcolor var_name
+
+B.15) Circle
+description:
+- draws a circle
+syntax:
+- circle(var_x,var_y,var_radius)
+
+B.16) Delay
+description:
+- delays the program excution by the argument supplied
+syntax:
+delay var_name
+
+B.17) Draw
+description:
+- lets you draw across the screen
+- u : up
+  d : down
+  r : right
+  l : left
+  e : diagonal up-right
+  f : diagonal down-right
+  g : diagonal down-left
+  h : diagonal up-right
+- syntax:
+draw "u40r40d40l40" 
+rem this draws a square
+
+B.18) Pset
+description:
+- sets the current drawing postion to (var_x,var_y)
+syntax:
+- pset(var_x,var_y)
+
+B.19) inarrow$
+description:
+- returns the keycode of the current key being pressed
+syntax:
+x = inarror$
+rem where x is int
+
+B.20) midx$ and midy$
+description:
+- returns the middle x and y coordinates respectivley
+syntax:
+x = midx$
+rem where x is int
+
+C) Known Bugs(We are working on them):
++ Whenever is_in_compile_mode == TRUE, give a blank 
+line after every if-then-else statement
++ Any program needs atleast two functions to excute as:
+function_arr = new function_class[num_of_functions];
+messes up when num_of_functions = 1
++ For loops can not begin or end with 0 as atoi() and
+atof() return 0 if the string is not convertible to 
+intiger/float
++ You need atleast one argument to make the function call
+valid
++ Nested if-then-else statements badly mess the excution 
++ else statement is compulsary
++ error reprting for if-then-else statements can be improved 
++ loading and unloading several files in succesion casues
+infinte loops and hangs 
++ can't find errors from header files
++ using text in graphics mode is not advisable
++ most probably you'll have to relaunch compiler after reading this
+
+D) NOTE: After repeated use, the compiler may hang or crash 
+abruptly. If this happens, please report the developers at:
+shubham.lumia@gmail.com 
+adijai8800@gmail.com
+Be as clear and descriptve as possible about the moment the 
+compiler crashed. Also, attach the program you were trying to run
+so that we can understand the problem better.
+
+E) Things under development:
++ Dynamic arrays with the format
+dim array(n) int
++ Coustom datatypes with the format:
+type student
+dim roll_no int
+dim percentage float
+dim name string
+endtype
++ evalution of experssions of the type:
+- 1+5^3 (all constants in an equation)
++evaluation of expressions in print and pset command like:
+- pset(var_x+30, var_y-50)
+- print 4+5
+
+F) Sample programs:
+prog15.txt for demonstration of reccursion
+prog16.txt for demonstration of error reporting
+prog17.txt for demonstration of graphics
+math.txt for demonstration of include
