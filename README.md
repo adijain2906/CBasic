@@ -21,7 +21,6 @@ access it through the editor.
 
 Feel free to report any kind of errors/crashes to us at:
 shubham.lumia@gmail.com 
-adijai8800@gmail.com
 
 Some Sample programs:
 prog15.txt for demonstration of reccursion
