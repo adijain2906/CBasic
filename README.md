@@ -1,6 +1,11 @@
 # CBasic Compiler
 A tribute to the first language I learnt made in Turbo C++ 3.0
 
+My contribution to this project was to create the text editor for
+the Compiler which was made by https://github.com/shubhamx64
+
+As the text editor was only made to edit code in the running mode only, the code for compiler is also attached.
+
 Steps to run the compiler:
 1) Open Turbo C++
 2) Copy this folder inside your BIN folder
