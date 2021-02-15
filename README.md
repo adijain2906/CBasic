@@ -19,9 +19,6 @@ Note: The Text Editor does not currently support creation of new files
 thus, create a new ".txt" file here in the explorer first in order to
 access it through the editor.
 
-Feel free to report any kind of errors/crashes to us at:
-shubham.lumia@gmail.com 
-
 Some Sample programs:
 prog15.txt for demonstration of reccursion
 prog16.txt for demonstration of error reporting
