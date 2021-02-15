@@ -1,7 +1,7 @@
 # CBasic Compiler
 A tribute to the first language I learnt made in Turbo C++ 3.0
 
-My contribution to this project was to create the text editor for
+My contribution to this project was to create the Text Editor for
 the Compiler which was made by https://github.com/shubhamx64
 
 As the text editor was only made to edit code in the running mode only, the code for compiler is also attached.
